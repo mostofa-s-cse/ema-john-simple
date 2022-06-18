@@ -1,0 +1,19 @@
+.cart{
+    margin-left: 50px;
+    text-align: center;
+}
+.total-price{
+    color: red;
+    font-weight: 900;
+}
+.cart-container .price-del{
+    margin-left: 20px;
+}
+.review-button{
+    background-color: goldenrod;
+    height: 30px;
+    width: 280px;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
