@@ -1,22 +1,23 @@
-.product{
+.allProduct{
     display: flex;
     border-bottom: 1px solid lightgray;
     margin-bottom: 5px;
-    margin-right: 10px;
     padding-bottom: 5px;
 }
-.product-name h4{
-    color: blue;
+.product-details{
+    margin-left: 40px;
 }
 .product-name{
     font-weight: 400;
-    margin-left: 40px;
+    color: blue;
+    font-size: 18px;
 }
 .main-button{
     background-color: goldenrod;
     height: 30px;
-    width: 150px;
+    width: 130px;
     border: 1px solid black;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
 }

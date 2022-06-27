@@ -1,5 +1,5 @@
 import React from 'react';
-import { ToastContainer } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './Cart.css'
 
 const Cart = (props) => {
@@ -33,7 +33,7 @@ const Cart = (props) => {
 
     return (
         <div className='cart-container'>
-            <div className='cart'>
+            <div className='cart mt-3'>
             <h4>Order Summary</h4>
             <p>Items ordered : {cart.length} </p>
             </div>
@@ -42,8 +42,10 @@ const Cart = (props) => {
                     <p><small>Shipping Cost : <span className='price-del'>$ {shipping}</span> </small></p>
                     <p><small>Tax + VAT     : <span className='price-del'>$ {tax}</span></small></p>
                     <p className='total-price'>Total Order Price : <span className='price-del'>$ {grandTotal} </span></p>
-
+                    <Link to = "/review">
                     <button className='review-button'>Review your order</button>
+                    </Link>
+                    
                 </div>
         </div>
     );
