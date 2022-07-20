@@ -1,20 +1,25 @@
 .header{
- text-align: center;
+    height: 80px;
+    background-color: #1C2B35;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* padding-left: 140px;
+    padding-right: 140px; */
 }
-.logo img{
-    height: 50px;
-    margin: 20px;
+.logo{
+    width: 150px;
+    height: 40px;
 }
-.header nav{
-    background: #000;
-    line-height: 40px;
+.main-nav{
+    margin-bottom: 66px;
 }
-nav a{
- text-decoration: none;
- color: #fff;
- margin-right: 20px;
- padding: 10px;
+.nav-link{
+    margin-left: 10px;
 }
-nav a:hover{
-    background-color: gray;
+.header a:hover{
+    color: orange;
+}
+.btn-login{
+    margin-right: 16px;
 }

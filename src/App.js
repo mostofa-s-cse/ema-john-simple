@@ -1,4 +1,3 @@
-import React, { createContext, useState } from 'react';
 import './App.css';
 import Header from './components/Header/Header';
 import Shop from './components/Shop/Shop';
@@ -13,30 +12,35 @@ import ProductDetail from './components/ProductDetail/ProductDetail';
 import NotFound from './components/NotFound/NotFound';
 import Shipment from './components/Shipment/Shipment';
 import Login from './components/Login/Login';
-import PrivateRoute from './components/PrivateRoute/PrivateRoute';
-
-export const UserContext = createContext();
+import RequireAuth from './components/RequireAuth/RequireAuth';
+import SignUp from './components/SignUp/SignUp';
 
 function App() {
-
-  const [loggedInUser,setLoggedInUser] = useState({});
-
   return (
-    <UserContext.Provider value={[loggedInUser,setLoggedInUser]}>
-      <Header></Header>
+    <div>
       <Router>
+      <Header></Header>
       <Routes>
         <Route path="/" element ={<Shop/>} />
         <Route path="/shop" element ={<Shop/>} />
         <Route path="/review" element ={<Review/>} />
         <Route path="/product/:productKey" element ={<ProductDetail/>} />
-        <Route path="/inventory" element ={<PrivateRoute><Inventory/></PrivateRoute>} />
-        <Route path="/shipment" element ={<PrivateRoute><Shipment/></PrivateRoute>} />
-        <Route path="/login" element ={<Login/>} />
+        <Route path='/inventory' element={
+          <RequireAuth>
+            <Inventory></Inventory>
+          </RequireAuth>
+        }></Route>
+        <Route path="/shipment" element={
+          <RequireAuth>
+            <Shipment></Shipment>
+          </RequireAuth>
+        }></Route>
         <Route exact path="*" element ={<NotFound/>} />
+        <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/signup' element={<SignUp></SignUp>}></Route>
       </Routes>
-    </Router>
-    </UserContext.Provider>
+      </Router>
+    </div>
   );
 }
 

@@ -7,7 +7,7 @@ const Product = (props) => {
     // console.log(props)
     const { img, name, seller, price, stock,key } = props.product
     return (
-        <div className='allProduct container mt-3'>
+        <div className='allProduct container mt-3 '>
             <div >
                 <img src={img} alt="" />
             </div>
